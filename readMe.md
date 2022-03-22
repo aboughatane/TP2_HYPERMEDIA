@@ -22,10 +22,10 @@ Capture0
 
 > Voici une demo du site web
 
- ![DEMO](https://github.com/aboughatane/TP2_HYPERMEDIA/tree/main/captures/Capture01)
+ ![DEMO](https://github.com/aboughatane/TP2_HYPERMEDIA/blob/main/captures/Capture01.PNG)
 
- ![DEMO](https://github.com/aboughatane/TP2_HYPERMEDIA/tree/main/captures/Capture02)
+ ![DEMO](https://github.com/aboughatane/TP2_HYPERMEDIA/blob/main/captures/Capture02.PNG)
 
- ![DEMO](https://github.com/aboughatane/TP2_HYPERMEDIA/tree/main/capture/Capture03)
+ ![DEMO](https://github.com/aboughatane/TP2_HYPERMEDIA/blob/main/captures/Capture03.PNG)
 
 
