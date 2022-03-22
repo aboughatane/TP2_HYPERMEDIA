@@ -11,32 +11,40 @@
              transfert();
       }                 
    ?>
-<div  id="div">
-      <h1>Envoyer une image </h1>
+   <div id="div">  
+      <h1> Envoyer une image </h1>
       <form enctype="multipart/form-data" action="#" method="post">
          <input type="hidden" name="MAX_FILE_SIZE" value="250000" />
-         <input type="file" name="fic" size=1000/>
+         <input type="file" name="file" size=1000/>
          <input type="submit" value="Envoyer" />
          <br><br>
       </form>
-</div>
+   </div>
       <h2 > Voici les images présentes dans la base : </h2>
-      <div style="padding: 50px 50px 50px 50px; bottom: 20; text-align:center;">
-         <?php
-            // Afficher l'image
-            $imgs = glob("photo/*.{jpg,png,gif}", GLOB_BRACE);
-            foreach ($imgs as $img) {
-               echo "<img src='$img' alt='image bdd' width='150' height='150'>";
-            }
+      <center><table border="1" cellpadding="10" cellspacing="3">
+         <?php include_once('pdo.php');   
+            // Afficher l'image et ses informations
+            foreach ($books as $book) {
          ?>
-      </div>
+            <tr>
+               <td><?php echo "  ID  " .$book['id_image']; ?></td>
+               <td style="background-color:#67B6EB"><?php echo "Titre  : " .$book['title_image']; ?></td>
+                   <?php $id = $book['id_image']; ?>
 
-      <footer id="footer">
-
-    // la boucle pour afficher les elements page par page
-   //  echo "heloo"
-   //  for($i=1; $i<=$pagesCount; $i++)
-      //   echo "<a href='?page=$i'> $i </a>&nbsp &nbsp";
-
+               <?php 
+               $imgs = glob("photo/*{_$id}.{jpg,png,jpeg,gif}", GLOB_BRACE);
+                  foreach ($imgs as $img){         
+                     echo "<td><img src='$img' alt='image bdd' width='250' height='200'></td>";               
+                  }
+            }
+               ?>
+            </tr>
+         </table></center>
+   <footer id="footer">
+      <?php            
+         // la boucle pour afficher les elements page par page       
+         for($i=1; $i<=$pagesCount; $i++)
+               echo "<a href='?page=$i'> $i </a>&nbsp &nbsp";         
+      ?>  
    </body>
 </html>
