@@ -14,7 +14,12 @@
         $count->execute(); 	
         $booksCount = $count->fetchAll();
 
-        $page = $_GET["page"];
+        if(isset($_GET["page"])){ 
+            $page = $_GET["page"];     
+        }
+        else{
+            $page = 1;
+        }
         $elementsPerPage = 2;  // Mettre qu'un seul element dans la page (un livre par page)
         $pagesCount=ceil($booksCount[0]["compt"]/$elementsPerPage);  // pagesCount est le nombre de page qu'on va avoir -  ceil permet d'arrondir le nombre pour un avoir un nombre entier
         $start = ($page-1) * $elementsPerPage;  // l'element par lequel commencer
